@@ -21,7 +21,7 @@ Barrels visually change their shape depending on how full they are, providing an
 - Visual states update automatically based on the number of arrows stored.
 
 ## Compatibility
-- Works with Vintage Story 1.20.0 - 1.20.12
+- Works with Vintage Story 1.20.0 - 1.21.1
 - Should be compatible with other mods unless they replace barrel-related block/entity classes.
 
 ## License
