@@ -1,8 +1,4 @@
-﻿using Vintagestory.API.Client;
-using Vintagestory.API.Common;
-using Vintagestory.API.Config;
-using Vintagestory.API.Server;
-
+﻿
 [assembly: ModInfo("arrowbarrels",
                     Authors = new string[] { "xXx_Ape_xXx" },
                     Description = "Barrels for storing arrows",
