@@ -1,0 +1,488 @@
+{
+	"editor": {
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+		"feather": "game:item/tool/material/feather",
+		"handle": "game:item/tool/material/handle",
+		"string": "game:item/tool/material/string"
+	},
+	"elements": [
+		{
+			"name": "Stick1",
+			"from": [ 3.5, 7.0, 9.6 ],
+			"to": [ 17.5, 7.6, 10.2 ],
+			"rotationOrigin": [ 10.5, 7.3, 9.9 ],
+			"rotationX": 12.0,
+			"rotationY": 8.0,
+			"rotationZ": -96.0,
+			"faces": {
+				"north": { "texture": "#handle", "uv": [ 1.0, 8.0, 15.0, 8.5 ] },
+				"east": { "texture": "#handle", "uv": [ 8.0, 7.0, 8.5, 7.5 ] },
+				"south": { "texture": "#handle", "uv": [ 0.0, 0.0, 14.0, 0.5 ] },
+				"west": { "texture": "#handle", "uv": [ 3.0, 2.0, 3.5, 2.5 ] },
+				"up": { "texture": "#handle", "uv": [ 1.0, 4.5, 15.0, 5.0 ] },
+				"down": { "texture": "#handle", "uv": [ 1.0, 7.0, 15.0, 7.5 ] }
+			},
+			"children": [
+				{
+					"name": "FeatherHorizontal",
+					"from": [ -1.6, -1.0, 0.7 ],
+					"to": [ 2.9, 1.0, 0.7 ],
+					"shade": false,
+					"rotationOrigin": [ 3.9, 0.3, 0.7 ],
+					"rotationX": -90.0,
+					"rotationY": -1.0,
+					"rotationZ": -22.5,
+					"faces": {
+						"south": { "texture": "#feather", "uv": [ 7.0, 10.0, 9.0, 14.5 ], "rotation": 270 }
+					}
+				},
+				{
+					"name": "FeatherVertical10",
+					"from": [ -2.0, -1.4, 0.3 ],
+					"to": [ 2.5, 1.1, 0.3 ],
+					"shade": false,
+					"rotationOrigin": [ 3.5, -0.1, 0.3 ],
+					"rotationZ": -22.5,
+					"faces": {
+						"south": { "texture": "#feather", "uv": [ 6.5, 10.0, 9.0, 14.5 ], "rotation": 270 }
+					}
+				},
+				{
+					"name": "FeatherVertical11",
+					"from": [ -2.4, -0.6, 0.3 ],
+					"to": [ 2.1, 1.9, 0.3 ],
+					"shade": false,
+					"rotationOrigin": [ 3.1, 0.7, 0.3 ],
+					"rotationY": 1.0,
+					"rotationZ": 22.5,
+					"faces": {
+						"south": { "texture": "#feather", "uv": [ 6.5, 10.0, 9.0, 14.5 ], "rotation": 270 }
+					}
+				},
+				{
+					"name": "FeatherHorizontal12",
+					"from": [ -1.9, -1.0, -0.3 ],
+					"to": [ 2.1, 1.0, -0.3 ],
+					"shade": false,
+					"rotationOrigin": [ 3.6, 0.3, -0.3 ],
+					"rotationX": -90.0,
+					"rotationZ": 22.5,
+					"faces": {
+						"south": { "texture": "#feather", "uv": [ 6.5, 10.0, 8.5, 14.0 ], "rotation": 270 }
+					}
+				},
+				{
+					"name": "FeatherHorizontal13",
+					"from": [ -2.7, -0.9, 0.3 ],
+					"to": [ 2.8, 1.6, 0.3 ],
+					"shade": false,
+					"rotationOrigin": [ 2.8, 0.4, 0.3 ],
+					"rotationX": -90.0,
+					"rotationY": -1.0,
+					"faces": {
+						"south": { "texture": "#feather", "uv": [ 6.5, 10.0, 9.0, 15.5 ], "rotation": 270 }
+					}
+				}
+			]
+		},
+		{
+			"name": "Stick2",
+			"from": [ 3.5, 7.1, 8.1 ],
+			"to": [ 17.5, 7.7, 8.7 ],
+			"rotationOrigin": [ 10.5, 7.4, 8.4 ],
+			"rotationX": 5.0,
+			"rotationY": 5.0,
+			"rotationZ": -98.0,
+			"faces": {
+				"north": { "texture": "#handle", "uv": [ 1.0, 8.0, 15.0, 8.5 ] },
+				"east": { "texture": "#handle", "uv": [ 8.0, 7.0, 8.5, 7.5 ] },
+				"south": { "texture": "#handle", "uv": [ 0.0, 0.0, 14.0, 0.5 ] },
+				"west": { "texture": "#handle", "uv": [ 3.0, 2.0, 3.5, 2.5 ] },
+				"up": { "texture": "#handle", "uv": [ 1.0, 4.5, 15.0, 5.0 ] },
+				"down": { "texture": "#handle", "uv": [ 1.0, 7.0, 15.0, 7.5 ] }
+			},
+			"children": [
+				{
+					"name": "FeatherHorizontal2",
+					"from": [ -1.6, -1.0, 0.7 ],
+					"to": [ 2.9, 1.0, 0.7 ],
+					"shade": false,
+					"rotationOrigin": [ 3.9, 0.3, 0.7 ],
+					"rotationX": -90.0,
+					"rotationY": -1.0,
+					"rotationZ": -22.5,
+					"faces": {
+						"south": { "texture": "#feather", "uv": [ 7.0, 10.0, 9.0, 14.5 ], "rotation": 270 }
+					}
+				},
+				{
+					"name": "FeatherVertical12",
+					"from": [ -2.0, -1.4, 0.3 ],
+					"to": [ 2.5, 1.1, 0.3 ],
+					"shade": false,
+					"rotationOrigin": [ 3.5, -0.1, 0.3 ],
+					"rotationZ": -22.5,
+					"faces": {
+						"south": { "texture": "#feather", "uv": [ 6.5, 10.0, 9.0, 14.5 ], "rotation": 270 }
+					}
+				},
+				{
+					"name": "FeatherVertical13",
+					"from": [ -2.4, -0.6, 0.3 ],
+					"to": [ 2.1, 1.9, 0.3 ],
+					"shade": false,
+					"rotationOrigin": [ 3.1, 0.7, 0.3 ],
+					"rotationY": 1.0,
+					"rotationZ": 22.5,
+					"faces": {
+						"south": { "texture": "#feather", "uv": [ 6.5, 10.0, 9.0, 14.5 ], "rotation": 270 }
+					}
+				},
+				{
+					"name": "FeatherHorizontal14",
+					"from": [ -1.9, -1.0, -0.3 ],
+					"to": [ 2.1, 1.0, -0.3 ],
+					"shade": false,
+					"rotationOrigin": [ 3.6, 0.3, -0.3 ],
+					"rotationX": -90.0,
+					"rotationZ": 22.5,
+					"faces": {
+						"south": { "texture": "#feather", "uv": [ 6.5, 10.0, 8.5, 14.0 ], "rotation": 270 }
+					}
+				},
+				{
+					"name": "FeatherHorizontal15",
+					"from": [ -2.7, -0.9, 0.3 ],
+					"to": [ 2.8, 1.6, 0.3 ],
+					"shade": false,
+					"rotationOrigin": [ 2.8, 0.4, 0.3 ],
+					"rotationX": -90.0,
+					"rotationY": -1.0,
+					"faces": {
+						"south": { "texture": "#feather", "uv": [ 6.5, 10.0, 9.0, 15.5 ], "rotation": 270 }
+					}
+				}
+			]
+		},
+		{
+			"name": "Stick3",
+			"from": [ 3.5, 6.7, 6.8 ],
+			"to": [ 17.5, 7.3, 7.4 ],
+			"rotationOrigin": [ 10.5, 7.0, 7.1 ],
+			"rotationX": 5.0,
+			"rotationY": 53.0,
+			"rotationZ": -105.0,
+			"faces": {
+				"north": { "texture": "#handle", "uv": [ 1.0, 8.0, 15.0, 8.5 ] },
+				"east": { "texture": "#handle", "uv": [ 8.0, 7.0, 8.5, 7.5 ] },
+				"south": { "texture": "#handle", "uv": [ 0.0, 0.0, 14.0, 0.5 ] },
+				"west": { "texture": "#handle", "uv": [ 3.0, 2.0, 3.5, 2.5 ] },
+				"up": { "texture": "#handle", "uv": [ 1.0, 4.5, 15.0, 5.0 ] },
+				"down": { "texture": "#handle", "uv": [ 1.0, 7.0, 15.0, 7.5 ] }
+			},
+			"children": [
+				{
+					"name": "FeatherHorizontal3",
+					"from": [ -1.6, -1.0, 0.7 ],
+					"to": [ 2.9, 1.0, 0.7 ],
+					"shade": false,
+					"rotationOrigin": [ 3.9, 0.3, 0.7 ],
+					"rotationX": -90.0,
+					"rotationY": -1.0,
+					"rotationZ": -22.5,
+					"faces": {
+						"south": { "texture": "#feather", "uv": [ 7.0, 10.0, 9.0, 14.5 ], "rotation": 270 }
+					}
+				},
+				{
+					"name": "FeatherVertical14",
+					"from": [ -2.0, -1.4, 0.3 ],
+					"to": [ 2.5, 1.1, 0.3 ],
+					"shade": false,
+					"rotationOrigin": [ 3.5, -0.1, 0.3 ],
+					"rotationZ": -22.5,
+					"faces": {
+						"south": { "texture": "#feather", "uv": [ 6.5, 10.0, 9.0, 14.5 ], "rotation": 270 }
+					}
+				},
+				{
+					"name": "FeatherVertical15",
+					"from": [ -2.4, -0.6, 0.3 ],
+					"to": [ 2.1, 1.9, 0.3 ],
+					"shade": false,
+					"rotationOrigin": [ 3.1, 0.7, 0.3 ],
+					"rotationY": 1.0,
+					"rotationZ": 22.5,
+					"faces": {
+						"south": { "texture": "#feather", "uv": [ 6.5, 10.0, 9.0, 14.5 ], "rotation": 270 }
+					}
+				},
+				{
+					"name": "FeatherHorizontal16",
+					"from": [ -1.9, -1.0, -0.3 ],
+					"to": [ 2.1, 1.0, -0.3 ],
+					"shade": false,
+					"rotationOrigin": [ 3.6, 0.3, -0.3 ],
+					"rotationX": -90.0,
+					"rotationZ": 22.5,
+					"faces": {
+						"south": { "texture": "#feather", "uv": [ 6.5, 10.0, 8.5, 14.0 ], "rotation": 270 }
+					}
+				},
+				{
+					"name": "FeatherHorizontal17",
+					"from": [ -2.7, -0.9, 0.3 ],
+					"to": [ 2.8, 1.6, 0.3 ],
+					"shade": false,
+					"rotationOrigin": [ 2.8, 0.4, 0.3 ],
+					"rotationX": -90.0,
+					"rotationY": -1.0,
+					"faces": {
+						"south": { "texture": "#feather", "uv": [ 6.5, 10.0, 9.0, 15.5 ], "rotation": 270 }
+					}
+				}
+			]
+		},
+		{
+			"name": "Stick4",
+			"from": [ 2.1, 7.2, 10.1 ],
+			"to": [ 16.1, 7.8, 10.7 ],
+			"rotationOrigin": [ 9.1, 7.5, 10.4 ],
+			"rotationX": 2.0,
+			"rotationY": -61.0,
+			"rotationZ": -102.0,
+			"faces": {
+				"north": { "texture": "#handle", "uv": [ 1.0, 8.0, 15.0, 8.5 ] },
+				"east": { "texture": "#handle", "uv": [ 8.0, 7.0, 8.5, 7.5 ] },
+				"south": { "texture": "#handle", "uv": [ 0.0, 0.0, 14.0, 0.5 ] },
+				"west": { "texture": "#handle", "uv": [ 3.0, 2.0, 3.5, 2.5 ] },
+				"up": { "texture": "#handle", "uv": [ 1.0, 4.5, 15.0, 5.0 ] },
+				"down": { "texture": "#handle", "uv": [ 1.0, 7.0, 15.0, 7.5 ] }
+			},
+			"children": [
+				{
+					"name": "FeatherHorizontal4",
+					"from": [ -1.6, -1.0, 0.7 ],
+					"to": [ 2.9, 1.0, 0.7 ],
+					"shade": false,
+					"rotationOrigin": [ 3.9, 0.3, 0.7 ],
+					"rotationX": -90.0,
+					"rotationY": -1.0,
+					"rotationZ": -22.5,
+					"faces": {
+						"south": { "texture": "#feather", "uv": [ 7.0, 10.0, 9.0, 14.5 ], "rotation": 270 }
+					}
+				},
+				{
+					"name": "FeatherVertical16",
+					"from": [ -2.0, -1.4, 0.3 ],
+					"to": [ 2.5, 1.1, 0.3 ],
+					"shade": false,
+					"rotationOrigin": [ 3.5, -0.1, 0.3 ],
+					"rotationZ": -22.5,
+					"faces": {
+						"south": { "texture": "#feather", "uv": [ 6.5, 10.0, 9.0, 14.5 ], "rotation": 270 }
+					}
+				},
+				{
+					"name": "FeatherVertical17",
+					"from": [ -2.4, -0.6, 0.3 ],
+					"to": [ 2.1, 1.9, 0.3 ],
+					"shade": false,
+					"rotationOrigin": [ 3.1, 0.7, 0.3 ],
+					"rotationY": 1.0,
+					"rotationZ": 22.5,
+					"faces": {
+						"south": { "texture": "#feather", "uv": [ 6.5, 10.0, 9.0, 14.5 ], "rotation": 270 }
+					}
+				},
+				{
+					"name": "FeatherHorizontal18",
+					"from": [ -1.9, -1.0, -0.3 ],
+					"to": [ 2.1, 1.0, -0.3 ],
+					"shade": false,
+					"rotationOrigin": [ 3.6, 0.3, -0.3 ],
+					"rotationX": -90.0,
+					"rotationZ": 22.5,
+					"faces": {
+						"south": { "texture": "#feather", "uv": [ 6.5, 10.0, 8.5, 14.0 ], "rotation": 270 }
+					}
+				},
+				{
+					"name": "FeatherHorizontal19",
+					"from": [ -2.7, -0.9, 0.3 ],
+					"to": [ 2.8, 1.6, 0.3 ],
+					"shade": false,
+					"rotationOrigin": [ 2.8, 0.4, 0.3 ],
+					"rotationX": -90.0,
+					"rotationY": -1.0,
+					"faces": {
+						"south": { "texture": "#feather", "uv": [ 6.5, 10.0, 9.0, 15.5 ], "rotation": 270 }
+					}
+				}
+			]
+		},
+		{
+			"name": "Stick5",
+			"from": [ 1.1, 7.0, 10.1 ],
+			"to": [ 15.1, 7.6, 10.7 ],
+			"rotationOrigin": [ 8.1, 7.3, 10.4 ],
+			"rotationX": 2.0,
+			"rotationY": -105.0,
+			"rotationZ": -102.0,
+			"faces": {
+				"north": { "texture": "#handle", "uv": [ 1.0, 8.0, 15.0, 8.5 ] },
+				"east": { "texture": "#handle", "uv": [ 8.0, 7.0, 8.5, 7.5 ] },
+				"south": { "texture": "#handle", "uv": [ 0.0, 0.0, 14.0, 0.5 ] },
+				"west": { "texture": "#handle", "uv": [ 3.0, 2.0, 3.5, 2.5 ] },
+				"up": { "texture": "#handle", "uv": [ 1.0, 4.5, 15.0, 5.0 ] },
+				"down": { "texture": "#handle", "uv": [ 1.0, 7.0, 15.0, 7.5 ] }
+			},
+			"children": [
+				{
+					"name": "FeatherHorizontal5",
+					"from": [ -1.6, -1.0, 0.7 ],
+					"to": [ 2.9, 1.0, 0.7 ],
+					"shade": false,
+					"rotationOrigin": [ 3.9, 0.3, 0.7 ],
+					"rotationX": -90.0,
+					"rotationY": -1.0,
+					"rotationZ": -22.5,
+					"faces": {
+						"south": { "texture": "#feather", "uv": [ 7.0, 10.0, 9.0, 14.5 ], "rotation": 270 }
+					}
+				},
+				{
+					"name": "FeatherVertical18",
+					"from": [ -2.0, -1.4, 0.3 ],
+					"to": [ 2.5, 1.1, 0.3 ],
+					"shade": false,
+					"rotationOrigin": [ 3.5, -0.1, 0.3 ],
+					"rotationZ": -22.5,
+					"faces": {
+						"south": { "texture": "#feather", "uv": [ 6.5, 10.0, 9.0, 14.5 ], "rotation": 270 }
+					}
+				},
+				{
+					"name": "FeatherVertical19",
+					"from": [ -2.4, -0.6, 0.3 ],
+					"to": [ 2.1, 1.9, 0.3 ],
+					"shade": false,
+					"rotationOrigin": [ 3.1, 0.7, 0.3 ],
+					"rotationY": 1.0,
+					"rotationZ": 22.5,
+					"faces": {
+						"south": { "texture": "#feather", "uv": [ 6.5, 10.0, 9.0, 14.5 ], "rotation": 270 }
+					}
+				},
+				{
+					"name": "FeatherHorizontal20",
+					"from": [ -1.9, -1.0, -0.3 ],
+					"to": [ 2.1, 1.0, -0.3 ],
+					"shade": false,
+					"rotationOrigin": [ 3.6, 0.3, -0.3 ],
+					"rotationX": -90.0,
+					"rotationZ": 22.5,
+					"faces": {
+						"south": { "texture": "#feather", "uv": [ 6.5, 10.0, 8.5, 14.0 ], "rotation": 270 }
+					}
+				},
+				{
+					"name": "FeatherHorizontal21",
+					"from": [ -2.7, -0.9, 0.3 ],
+					"to": [ 2.8, 1.6, 0.3 ],
+					"shade": false,
+					"rotationOrigin": [ 2.8, 0.4, 0.3 ],
+					"rotationX": -90.0,
+					"rotationY": -1.0,
+					"faces": {
+						"south": { "texture": "#feather", "uv": [ 6.5, 10.0, 9.0, 15.5 ], "rotation": 270 }
+					}
+				}
+			]
+		},
+		{
+			"name": "Stick6",
+			"from": [ 2.3, 6.7, 8.7 ],
+			"to": [ 16.3, 7.3, 9.3 ],
+			"rotationOrigin": [ 9.3, 7.0, 9.0 ],
+			"rotationX": 2.0,
+			"rotationY": -68.0,
+			"rotationZ": -97.0,
+			"faces": {
+				"north": { "texture": "#handle", "uv": [ 1.0, 8.0, 15.0, 8.5 ] },
+				"east": { "texture": "#handle", "uv": [ 8.0, 7.0, 8.5, 7.5 ] },
+				"south": { "texture": "#handle", "uv": [ 0.0, 0.0, 14.0, 0.5 ] },
+				"west": { "texture": "#handle", "uv": [ 3.0, 2.0, 3.5, 2.5 ] },
+				"up": { "texture": "#handle", "uv": [ 1.0, 4.5, 15.0, 5.0 ] },
+				"down": { "texture": "#handle", "uv": [ 1.0, 7.0, 15.0, 7.5 ] }
+			},
+			"children": [
+				{
+					"name": "FeatherHorizontal6",
+					"from": [ -1.6, -1.0, 0.7 ],
+					"to": [ 2.9, 1.0, 0.7 ],
+					"shade": false,
+					"rotationOrigin": [ 3.9, 0.3, 0.7 ],
+					"rotationX": -90.0,
+					"rotationY": -1.0,
+					"rotationZ": -22.5,
+					"faces": {
+						"south": { "texture": "#feather", "uv": [ 7.0, 10.0, 9.0, 14.5 ], "rotation": 270 }
+					}
+				},
+				{
+					"name": "FeatherVertical20",
+					"from": [ -2.0, -1.4, 0.3 ],
+					"to": [ 2.5, 1.1, 0.3 ],
+					"shade": false,
+					"rotationOrigin": [ 3.5, -0.1, 0.3 ],
+					"rotationZ": -22.5,
+					"faces": {
+						"south": { "texture": "#feather", "uv": [ 6.5, 10.0, 9.0, 14.5 ], "rotation": 270 }
+					}
+				},
+				{
+					"name": "FeatherVertical21",
+					"from": [ -2.4, -0.6, 0.3 ],
+					"to": [ 2.1, 1.9, 0.3 ],
+					"shade": false,
+					"rotationOrigin": [ 3.1, 0.7, 0.3 ],
+					"rotationY": 1.0,
+					"rotationZ": 22.5,
+					"faces": {
+						"south": { "texture": "#feather", "uv": [ 6.5, 10.0, 9.0, 14.5 ], "rotation": 270 }
+					}
+				},
+				{
+					"name": "FeatherHorizontal22",
+					"from": [ -1.9, -1.0, -0.3 ],
+					"to": [ 2.1, 1.0, -0.3 ],
+					"shade": false,
+					"rotationOrigin": [ 3.6, 0.3, -0.3 ],
+					"rotationX": -90.0,
+					"rotationZ": 22.5,
+					"faces": {
+						"south": { "texture": "#feather", "uv": [ 6.5, 10.0, 8.5, 14.0 ], "rotation": 270 }
+					}
+				},
+				{
+					"name": "FeatherHorizontal23",
+					"from": [ -2.7, -0.9, 0.3 ],
+					"to": [ 2.8, 1.6, 0.3 ],
+					"shade": false,
+					"rotationOrigin": [ 2.8, 0.4, 0.3 ],
+					"rotationX": -90.0,
+					"rotationY": -1.0,
+					"faces": {
+						"south": { "texture": "#feather", "uv": [ 6.5, 10.0, 9.0, 15.5 ], "rotation": 270 }
+					}
+				}
+			]
+		}
+	]}

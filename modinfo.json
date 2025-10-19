@@ -1,0 +1,15 @@
+{
+  "type": "code",
+  "modid": "arrowbarrels",
+  "name": "Arrow Barrels",
+  "description" : "Barrels for storing arrows",
+  "authors": ["xXx_Ape_xXx"],
+  "contributors": [""],
+  "requiredOnClient": true,
+  "requiredOnServer": true,
+  "side": "universal",
+  "version": "1.3.0",
+  "dependencies": { 
+	"game": "1.21.0"
+  }
+}

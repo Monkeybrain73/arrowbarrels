@@ -1,0 +1,211 @@
+{
+	"code": "spearbarrel",
+	"class": "BlockSpearBarrel",
+	"entityclass": "BESpearBarrel",
+	"attributes": {
+		"humanoidTraversalCost": 2,
+		"reinforcable": true,
+		"partialAttachable": true,
+		"inventoryClassName": "barrel",
+		"defaultType": "wood-aged",
+		"handbook": {
+			"groupBy": [ "barrel" ]
+		},
+		"types": ["wood-aged", "wood-birch", "wood-oak", "wood-maple", "wood-pine", "wood-acacia", "wood-kapok", "wood-baldcypress", "wood-larch", "wood-redwood", "wood-ebony", "wood-walnut", "wood-purpleheart"],
+		"properties": {
+			"*": {
+				"quantitySlots": 12,
+				"rotatatableInterval": "22.5deg",
+				"storageFlags": 1,
+				"retrieveOnly": false,
+				"shape": { "base": "arrowbarrels:block/wood/barrel/spears/normal-empty", "rotateY": 180 }
+			}
+		}
+	},
+	"behaviors": [
+		{"name": "Lockable" },
+		{"name": "Container"},
+		{"name": "CBSpearBarrel"}
+	],
+	"creativeinventory": {  },
+	"notCreativeinventoryStacks": [
+	{
+		"tabs": [ "general", "decorative" ],
+		"stacks": [
+			{ "type": "block", "code": "spearbarrel", "attributes": { "fillState": "stage1", "type": "wood-aged" } },
+			{ "type": "block", "code": "spearbarrel", "attributes": { "fillState": "stage1", "type": "wood-birch" } },
+			{ "type": "block", "code": "spearbarrel", "attributes": { "fillState": "stage1", "type": "wood-oak" } },
+			{ "type": "block", "code": "spearbarrel", "attributes": { "fillState": "stage1", "type": "wood-maple" } },
+			{ "type": "block", "code": "spearbarrel", "attributes": { "fillState": "stage1", "type": "wood-pine" } },
+			{ "type": "block", "code": "spearbarrel", "attributes": { "fillState": "stage1", "type": "wood-acacia" } },
+			{ "type": "block", "code": "spearbarrel", "attributes": { "fillState": "stage1", "type": "wood-kapok" } },
+			{ "type": "block", "code": "spearbarrel", "attributes": { "fillState": "stage1", "type": "wood-baldcypress" } },
+			{ "type": "block", "code": "spearbarrel", "attributes": { "fillState": "stage1", "type": "wood-larch" } },
+			{ "type": "block", "code": "spearbarrel", "attributes": { "fillState": "stage1", "type": "wood-redwood" } },
+			{ "type": "block", "code": "spearbarrel", "attributes": { "fillState": "stage1", "type": "wood-ebony" } },
+			{ "type": "block", "code": "spearbarrel", "attributes": { "fillState": "stage1", "type": "wood-walnut" } },
+			{ "type": "block", "code": "spearbarrel", "attributes": { "fillState": "stage1", "type": "wood-purpleheart" } }
+		]
+	}],
+	"creativeinventoryStacks": [
+	{
+		"tabs": [ "general", "decorative" ],
+		"stacks": [
+			{ "type": "block", "code": "spearbarrel", "attributes": { "fillState": "empty", "type": "wood-aged" } },
+			{ "type": "block", "code": "spearbarrel", "attributes": { "fillState": "empty", "type": "wood-birch" } },
+			{ "type": "block", "code": "spearbarrel", "attributes": { "fillState": "empty", "type": "wood-oak" } },
+			{ "type": "block", "code": "spearbarrel", "attributes": { "fillState": "empty", "type": "wood-maple" } },
+			{ "type": "block", "code": "spearbarrel", "attributes": { "fillState": "empty", "type": "wood-pine" } },
+			{ "type": "block", "code": "spearbarrel", "attributes": { "fillState": "empty", "type": "wood-acacia" } },
+			{ "type": "block", "code": "spearbarrel", "attributes": { "fillState": "empty", "type": "wood-kapok" } },
+			{ "type": "block", "code": "spearbarrel", "attributes": { "fillState": "empty", "type": "wood-baldcypress" } },
+			{ "type": "block", "code": "spearbarrel", "attributes": { "fillState": "empty", "type": "wood-larch" } },
+			{ "type": "block", "code": "spearbarrel", "attributes": { "fillState": "empty", "type": "wood-redwood" } },
+			{ "type": "block", "code": "spearbarrel", "attributes": { "fillState": "empty", "type": "wood-ebony" } },
+			{ "type": "block", "code": "spearbarrel", "attributes": { "fillState": "empty", "type": "wood-walnut" } },
+			{ "type": "block", "code": "spearbarrel", "attributes": { "fillState": "empty", "type": "wood-purpleheart" } }
+		]
+	}],
+	"heldTpIdleAnimation": "holdunderarm",
+	"shapeInventory": { "base": "arrowbarrels:block/wood/barrel/spears/normal-empty", "rotateY": 0 },
+	"shapeByType": { "base": "arrowbarrels:block/wood/barrel/spears/normal-empty", "rotateY": 0 },
+	"textures": {
+		"wood-aged-aged": { "base": "game:block/wood/debarked/aged" },
+		"wood-aged-bottom": { "base": "game:block/wood/barrel/bottom" },
+		"wood-aged-blackbronze4": { "base": "game:block/metal/sheet/blackbronze4" },
+		"wood-aged-material": { "base": "game:block/metal/ingot/copper" },
+		"wood-aged-material2": { "base": "game:item/tool/material/flint" },
+		"wood-aged-handle": { "base": "game:item/tool/material/handle" },
+    "wood-aged-string": { "base": "game:item/tool/material/string" },
+
+		"wood-birch-aged": { "base": "game:block/wood/debarked/birch" },
+		"wood-birch-bottom": { "base": "game:block/wood/barrel/bottom" },
+		"wood-birch-blackbronze4": { "base": "game:block/metal/sheet/blackbronze4" },
+		"wood-birch-material": { "base": "game:block/metal/ingot/copper" },
+		"wood-birch-material2": { "base": "game:item/tool/material/flint" },
+		"wood-birch-handle": { "base": "game:item/tool/material/handle" },
+    "wood-birch-string": { "base": "game:item/tool/material/string" },
+
+		"wood-oak-aged": { "base": "game:block/wood/debarked/oak" },
+		"wood-oak-bottom": { "base": "game:block/wood/barrel/bottom" },
+		"wood-oak-blackbronze4": { "base": "game:block/metal/sheet/blackbronze4" },
+		"wood-oak-material": { "base": "game:block/metal/ingot/copper" },
+		"wood-oak-material2": { "base": "game:item/tool/material/flint" },
+		"wood-oak-handle": { "base": "game:item/tool/material/handle" },
+		"wood-oak-string": { "base": "game:item/tool/material/string" },
+
+		"wood-maple-aged": { "base": "game:block/wood/debarked/maple" },
+		"wood-maple-bottom": { "base": "game:block/wood/barrel/bottom" },
+		"wood-maple-blackbronze4": { "base": "game:block/metal/sheet/blackbronze4" },
+		"wood-maple-material": { "base": "game:block/metal/ingot/copper" },
+		"wood-maple-material2": { "base": "game:item/tool/material/flint" },
+		"wood-maple-handle": { "base": "game:item/tool/material/handle" },
+		"wood-maple-string": { "base": "game:item/tool/material/string" },
+
+		"wood-pine-aged": { "base": "game:block/wood/debarked/pine" },
+		"wood-pine-bottom": { "base": "game:block/wood/barrel/bottom" },
+		"wood-pine-blackbronze4": { "base": "game:block/metal/sheet/blackbronze4" },
+		"wood-pine-material": { "base": "game:block/metal/ingot/copper" },
+		"wood-pine-material2": { "base": "game:item/tool/material/flint" },
+		"wood-pine-handle": { "base": "game:item/tool/material/handle" },
+		"wood-pine-string": { "base": "game:item/tool/material/string" },
+
+		"wood-acacia-aged": { "base": "game:block/wood/debarked/acacia" },
+		"wood-acacia-bottom": { "base": "game:block/wood/barrel/bottom" },
+		"wood-acacia-blackbronze4": { "base": "game:block/metal/sheet/blackbronze4" },
+		"wood-acacia-material": { "base": "game:block/metal/ingot/copper" },
+		"wood-acacia-material2": { "base": "game:item/tool/material/flint" },
+		"wood-acacia-handle": { "base": "game:item/tool/material/handle" },
+		"wood-acacia-string": { "base": "game:item/tool/material/string" },
+
+		"wood-kapok-aged": { "base": "game:block/wood/debarked/kapok" },
+		"wood-kapok-bottom": { "base": "game:block/wood/barrel/bottom" },
+		"wood-kapok-blackbronze4": { "base": "game:block/metal/sheet/blackbronze4" },
+		"wood-kapok-material": { "base": "game:block/metal/ingot/copper" },
+		"wood-kapok-material2": { "base": "game:item/tool/material/flint" },
+		"wood-kapok-handle": { "base": "game:item/tool/material/handle" },
+		"wood-kapok-string": { "base": "game:item/tool/material/string" },
+
+		"wood-baldcypress-aged": { "base": "game:block/wood/debarked/baldcypress" },
+		"wood-baldcypress-bottom": { "base": "game:block/wood/barrel/bottom" },
+		"wood-baldcypress-blackbronze4": { "base": "game:block/metal/sheet/blackbronze4" },
+		"wood-baldcypress-material": { "base": "game:block/metal/ingot/copper" },
+		"wood-baldcypress-material2": { "base": "game:item/tool/material/flint" },
+		"wood-baldcypress-handle": { "base": "game:item/tool/material/handle" },
+		"wood-baldcypress-string": { "base": "game:item/tool/material/string" },
+
+		"wood-larch-aged": { "base": "game:block/wood/debarked/larch" },
+		"wood-larch-bottom": { "base": "game:block/wood/barrel/bottom" },
+		"wood-larch-blackbronze4": { "base": "game:block/metal/sheet/blackbronze4" },
+		"wood-larch-material": { "base": "game:block/metal/ingot/copper" },
+		"wood-larch-material2": { "base": "game:item/tool/material/flint" },
+		"wood-larch-handle": { "base": "game:item/tool/material/handle" },
+		"wood-larch-string": { "base": "game:item/tool/material/string" },
+
+		"wood-redwood-aged": { "base": "game:block/wood/debarked/redwood" },
+		"wood-redwood-bottom": { "base": "game:block/wood/barrel/bottom" },
+		"wood-redwood-blackbronze4": { "base": "game:block/metal/sheet/blackbronze4" },
+		"wood-redwood-material": { "base": "game:block/metal/ingot/copper" },
+		"wood-redwood-material2": { "base": "game:item/tool/material/flint" },
+		"wood-redwood-handle": { "base": "game:item/tool/material/handle" },
+		"wood-redwood-string": { "base": "game:item/tool/material/string" },
+
+		"wood-ebony-aged": { "base": "game:block/wood/debarked/ebony" },
+		"wood-ebony-bottom": { "base": "game:block/wood/barrel/bottom" },
+		"wood-ebony-blackbronze4": { "base": "game:block/metal/sheet/blackbronze4" },
+		"wood-ebony-material": { "base": "game:block/metal/ingot/copper" },
+		"wood-ebony-material2": { "base": "game:item/tool/material/flint" },
+		"wood-ebony-handle": { "base": "game:item/tool/material/handle" },
+		"wood-ebony-string": { "base": "game:item/tool/material/string" },
+
+		"wood-walnut-aged": { "base": "game:block/wood/debarked/walnut" },
+		"wood-walnut-bottom": { "base": "game:block/wood/barrel/bottom" },
+		"wood-walnut-blackbronze4": { "base": "game:block/metal/sheet/blackbronze4" },
+		"wood-walnut-material": { "base": "game:block/metal/ingot/copper" },
+		"wood-walnut-material2": { "base": "game:item/tool/material/flint" },
+		"wood-walnut-handle": { "base": "game:item/tool/material/handle" },
+		"wood-walnut-string": { "base": "game:item/tool/material/string" },
+
+		"wood-purpleheart-aged": { "base": "game:block/wood/debarked/purpleheart" },
+		"wood-purpleheart-bottom": { "base": "game:block/wood/barrel/bottom" },
+		"wood-purpleheart-blackbronze4": { "base": "game:block/metal/sheet/blackbronze4" },
+		"wood-purpleheart-material": { "base": "game:block/metal/ingot/copper" },
+		"wood-purpleheart-material2": { "base": "game:item/tool/material/flint" },
+		"wood-purpleheart-handle": { "base": "game:item/tool/material/handle" },
+		"wood-purpleheart-string": { "base": "game:item/tool/material/string" }
+	},
+	"blockmaterial": "Wood",
+	"replaceable": 900,
+	"resistance": 3,
+	"renderpass": "opaquenocull",
+	"lightAbsorption": 0,
+	"sideAo": { "all": false },
+	"sidesolid": {
+		"all": false
+	},
+	"sideopaque": {
+		"all": false
+	},
+	"combustibleProps": {
+		"burnTemperature": 600,
+		"burnDuration": 35
+	},
+	"sounds": {
+		"place": "game:block/planks",
+		"hit": "game:block/planks",
+		"break": "game:block/planks",
+		"walk": "game:walk/wood"
+	},
+	"materialDensity": 600,
+	"tpHandTransform": {
+		"translation": { "x": -1.5, "y": -0.5, "z": -0.8 },
+		"rotation": { "x": 0, "y": -2, "z": -99 },
+		"scale": 0.44
+	},
+	"guiTransform": {
+		"origin": { "x": 0.5, "y": 0.4, "z": 0.5 },
+		"scale": 1.46
+	},
+	"collisionbox": { "x1": 0.125, "y1": 0, "z1": 0.125, "x2": 0.875, "y2": 1, "z2": 0.825 },
+	"selectionBox": { "x1": 0.125, "Y1": 0, "z1": 0.125, "x2": 0.875, "y2": 1, "z2": 0.825 }
+}

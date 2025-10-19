@@ -13,48 +13,11 @@ using Vintagestory.GameContent;
 
 namespace arrowbarrels
 {
-    public class BarrelTypeProperties
-    {
-        public int QuantitySlots;
-        public CompositeShape Shape;
-        public string RotatatableInterval;
-        public EnumItemStorageFlags StorageType;
-        public bool RetrieveOnly;
-    }
 
-    public class BarrelProperties
-    {
-        public Dictionary<string, BarrelTypeProperties> Properties;
-        public string[] Types;
-        public string DefaultType = "wood-aged";
-        public string VariantByGroup;
-        public string VariantByGroupInventory;
-        public string InventoryClassName = "barrel";
-
-        public BarrelTypeProperties this[string type]
-        {
-            get
-            {
-                if (!Properties.TryGetValue(type, out var props))
-                {
-                    return Properties["*"];
-                }
-
-                return props;
-            }
-        }
-    }
-
-    public class ItemStackRenderCacheItem
-    {
-        public int TextureSubId;
-        public HashSet<int> UsedCounter;
-    }
-
-    public class CollectibleBehaviorArrowBarrel : CollectibleBehaviorHeldBag, IAttachedInteractions
+    public class CollectibleBehaviorSpearBarrel : CollectibleBehaviorHeldBag, IAttachedInteractions
     {
         ICoreAPI Api;
-        public CollectibleBehaviorArrowBarrel(CollectibleObject collObj) : base(collObj)
+        public CollectibleBehaviorSpearBarrel(CollectibleObject collObj) : base(collObj)
         {
         }
 
@@ -72,7 +35,7 @@ namespace arrowbarrels
 
         public override int GetQuantitySlots(ItemStack bagstack)
         {
-            if (collObj is not BlockArrowBarrel barrel) return 0;
+            if (collObj is not BlockSpearBarrel barrel) return 0;
 
             string type = bagstack.Attributes.GetString("type") ?? barrel.Props.DefaultType;
             int quantity = barrel.Props[type].QuantitySlots;
@@ -145,31 +108,28 @@ namespace arrowbarrels
                 }
                 else
                 {
-                    if (hotbarslot.Itemstack.Equals(Api.World, ownSlot.Itemstack, GlobalConstants.IgnoredStackAttributes))
+                    List<ItemSlot> skipSlots = new List<ItemSlot>();
+                    while (hotbarslot.StackSize > 0 && skipSlots.Count < ws.WrapperInv.Count)
                     {
-                        List<ItemSlot> skipSlots = new List<ItemSlot>();
-                        while (hotbarslot.StackSize > 0 && skipSlots.Count < ws.WrapperInv.Count)
+                        WeightedSlot wslot = ws.WrapperInv.GetBestSuitedSlot(hotbarslot, null, skipSlots);
+                        if (wslot.slot == null) break;
+
+                        if (hotbarslot.TryPutInto(Api.World, wslot.slot, quantity) > 0)
                         {
-                            WeightedSlot wslot = ws.WrapperInv.GetBestSuitedSlot(hotbarslot, null, skipSlots);
-                            if (wslot.slot == null) break;
+                            didMoveItems(wslot.slot.Itemstack, byPlayer);
 
-                            if (hotbarslot.TryPutInto(Api.World, wslot.slot, quantity) > 0)
-                            {
-                                didMoveItems(wslot.slot.Itemstack, byPlayer);
+                            ws.BagInventory.SaveSlotIntoBag((ItemSlotBagContent)wslot.slot);
 
-                                ws.BagInventory.SaveSlotIntoBag((ItemSlotBagContent)wslot.slot);
-
-                                Api.World.Logger.Audit("{0} Put {1}x{2} into Boat barrel at {3}.",
-                                    byPlayer.PlayerName,
-                                    quantity,
-                                    wslot.slot.Itemstack.Collectible.Code,
-                                    Pos
-                                );
-                                if (!bulk) break;
-                            }
-
-                            skipSlots.Add(wslot.slot);
+                            Api.World.Logger.Audit("{0} Put {1}x{2} into Boat barrel at {3}.",
+                                byPlayer.PlayerName,
+                                quantity,
+                                wslot.slot.Itemstack.Collectible.Code,
+                                Pos
+                            );
+                            if (!bulk) break;
                         }
+
+                        skipSlots.Add(wslot.slot);
                     }
                 }
 
@@ -186,7 +146,7 @@ namespace arrowbarrels
     }
 
 
-    public class BlockArrowBarrel : BlockContainer, ITexPositionSource, IWearableShapeSupplier
+    public class BlockSpearBarrel : BlockContainer, ITexPositionSource, IWearableShapeSupplier
     {
 
         public Size2i AtlasSize { get { return tmpTextureSource.AtlasSize; } }
@@ -240,10 +200,10 @@ namespace arrowbarrels
             var contentStacks = GetNonEmptyContents(api.World, stack);
             var contentStack = contentStacks == null || contentStacks.Length == 0 ? null : contentStacks[0];
 
-            if (isFilled == "filled")
+            if (isFilled == "stage")
             {
                 cshape = cshape.Clone();
-                cshape.Base.Path = cshape.Base.Path.Replace("empty", "filled");
+                cshape.Base.Path = cshape.Base.Path.Replace("empty", "stage");
             }
 
             AssetLocation shapeloc = cshape.Base.WithPathAppendixOnce(".json").WithPathPrefixOnce("shapes/");
@@ -300,7 +260,7 @@ namespace arrowbarrels
         /*
         public override Cuboidf[] GetSelectionBoxes(IBlockAccessor blockAccessor, BlockPos pos)
         {
-            BEArrowBarrel be = blockAccessor.GetBlockEntity(pos) as BEArrowBarrel;
+            BESpearBarrel be = blockAccessor.GetBlockEntity(pos) as BESpearBarrel;
             if (be != null) return be.GetSelectionBoxes();
 
 
@@ -310,7 +270,7 @@ namespace arrowbarrels
         Cuboidf[] closedCollBoxes = new Cuboidf[] { new Cuboidf(0.0625f, 0, 0.0625f, 0.9375f, 0.9375f, 0.9375f) };
         public override Cuboidf[] GetCollisionBoxes(IBlockAccessor blockAccessor, BlockPos pos)
         {
-            BEArrowBarrel be = blockAccessor.GetBlockEntity(pos) as BEArrowBarrel;
+            BESpearBarrel be = blockAccessor.GetBlockEntity(pos) as BESpearBarrel;
             if (be != null && be.FillState == "empty")
             {
                 return closedCollBoxes;
@@ -335,7 +295,7 @@ namespace arrowbarrels
 
             if (val)
             {
-                BEArrowBarrel bect = world.BlockAccessor.GetBlockEntity(blockSel.Position) as BEArrowBarrel;
+                BESpearBarrel bect = world.BlockAccessor.GetBlockEntity(blockSel.Position) as BESpearBarrel;
                 if (bect != null)
                 {
                     BlockPos targetPos = blockSel.DidOffset ? blockSel.Position.AddCopy(blockSel.Face.Opposite) : blockSel.Position;
@@ -457,7 +417,7 @@ namespace arrowbarrels
                 }
                 else
                 {
-                    cshape.Base.Path = cshape.Base.Path.Replace("filled", fillStage);
+                    cshape.Base.Path = cshape.Base.Path.Replace("stage", fillStage);
                 }
             }
 
@@ -466,7 +426,7 @@ namespace arrowbarrels
             if (shape == null) return new MeshData();
 
             curType = type;
-            tesselator.TesselateShape("arrowbarrel", shape, out MeshData mesh, this, rotation == null ? new Vec3f(Shape.rotateX, Shape.rotateY, Shape.rotateZ) : rotation);
+            tesselator.TesselateShape("spearbarrel", shape, out MeshData mesh, this, rotation == null ? new Vec3f(Shape.rotateX, Shape.rotateY, Shape.rotateZ) : rotation);
 
             if (contentStack != null && fillStage != "empty")
             {
@@ -485,7 +445,7 @@ namespace arrowbarrels
 
             if (contentSource != null)
             {
-                Shape shape = Vintagestory.API.Common.Shape.TryGet(api, "shapes/block/wood/barrel/arrows/contents.json");
+                Shape shape = Vintagestory.API.Common.Shape.TryGet(api, "shapes/block/wood/barrel/spears/contents.json");
                 capi.Tesselator.TesselateShape("barrelcontents", shape, out MeshData contentMesh, contentSource, rotation);
                 contentMesh.Translate(0, fillHeight * 1.1f, 0);
                 return contentMesh;
@@ -496,7 +456,7 @@ namespace arrowbarrels
 
         public override void GetDecal(IWorldAccessor world, BlockPos pos, ITexPositionSource decalTexSource, ref MeshData decalModelData, ref MeshData blockModelData)
         {
-            BEArrowBarrel be = world.BlockAccessor.GetBlockEntity(pos) as BEArrowBarrel;
+            BESpearBarrel be = world.BlockAccessor.GetBlockEntity(pos) as BESpearBarrel;
             if (be != null)
             {
 
@@ -515,7 +475,7 @@ namespace arrowbarrels
         {
             ItemStack stack = new ItemStack(this);
 
-            BEArrowBarrel be = world.BlockAccessor.GetBlockEntity(pos) as BEArrowBarrel;
+            BESpearBarrel be = world.BlockAccessor.GetBlockEntity(pos) as BESpearBarrel;
             if (be != null)
             {
                 stack.Attributes.SetString("type", be.type);
@@ -541,7 +501,7 @@ namespace arrowbarrels
 
         public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
         {
-            BEArrowBarrel be = world.BlockAccessor.GetBlockEntity(blockSel.Position) as BEArrowBarrel;
+            BESpearBarrel be = world.BlockAccessor.GetBlockEntity(blockSel.Position) as BESpearBarrel;
             if (be != null) return be.OnBlockInteractStart(byPlayer, blockSel);
 
             return base.OnBlockInteractStart(world, byPlayer, blockSel);
@@ -554,7 +514,7 @@ namespace arrowbarrels
             string isFilled = itemStack.Attributes.GetString("fillState", "empty");
             if (isFilled.Length == 0) isFilled = "empty";
 
-            return Lang.GetMatching(Code?.Domain + AssetLocation.LocationSeparator + "block-" + type + "-" + Code?.Path, Lang.Get("arrowbarrelfillstate-" + isFilled, "empty"));
+            return Lang.GetMatching(Code?.Domain + AssetLocation.LocationSeparator + "block-" + type + "-" + Code?.Path, Lang.Get("spearbarrelfillstate-" + isFilled, "empty"));
         }
 
         public override void GetHeldItemInfo(ItemSlot inSlot, StringBuilder dsc, IWorldAccessor world, bool withDebugInfo)
@@ -612,27 +572,15 @@ namespace arrowbarrels
             return base.GetPlacedBlockInteractionHelp(world, selection, forPlayer).Append(new WorldInteraction[] {
                 new WorldInteraction()
                 {
-                    ActionLangCode = "blockhelp-arrow-add",
+                    ActionLangCode = "blockhelp-spear-add",
                     MouseButton = EnumMouseButton.Right,
                     HotKeyCode = "shift"
                 },
                 new WorldInteraction()
                 {
-                    ActionLangCode = "blockhelp-arrow-addall",
-                    MouseButton = EnumMouseButton.Right,
-                    HotKeyCodes = new string[] { "shift", "ctrl" }
-                },
-                new WorldInteraction()
-                {
-                    ActionLangCode = "blockhelp-arrow-remove",
+                    ActionLangCode = "blockhelp-spear-remove",
                     MouseButton = EnumMouseButton.Right,
                     HotKeyCode = null
-                },
-                new WorldInteraction()
-                {
-                    ActionLangCode = "blockhelp-arrow-removeall",
-                    MouseButton = EnumMouseButton.Right,
-                    HotKeyCode = "ctrl"
                 }
             });
         }

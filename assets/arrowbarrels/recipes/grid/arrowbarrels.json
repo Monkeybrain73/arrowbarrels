@@ -1,0 +1,24 @@
+[
+	{
+		"ingredientPattern": "CDC,___,CDC",
+		"ingredients": {
+			"C": { "type": "item", "code": "game:stick" },
+			"D": { "type": "item", "code": "game:plank-*", "name": "wood" }
+		},
+		"width": 3,
+		"height": 3,
+		"shapeless": false,
+		"output": { "type": "block", "code": "arrowbarrels:arrowbarrel", "attributes": { "fillState": "empty", "type": "wood-{wood}" } }
+	},
+	{
+		"ingredientPattern": "CDC,DCD,CDC",
+		"ingredients": {
+			"C": { "type": "item", "code": "game:stick" },
+			"D": { "type": "item", "code": "game:plank-*", "name": "wood" }
+		},
+		"width": 3,
+		"height": 3,
+		"shapeless": false,
+		"output": { "type": "block", "code": "arrowbarrels:spearbarrel", "attributes": { "fillState": "empty", "type": "wood-{wood}" } }
+	}
+]
