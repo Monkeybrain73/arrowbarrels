@@ -2,14 +2,14 @@
 
 namespace arrowbarrels
 {
-    public class BESpearBarrel : BlockEntityContainer, IRotatable
+    public class BEStickBarrel : BlockEntityContainer, IRotatable
     {
         InventoryGeneric inventory;
-        BlockSpearBarrel ownBlock;
+        BlockStickBarrel ownBlock;
 
         public string type = "wood-aged";
         public string preferredFillState = "empty";
-        public int quantitySlots = 12;
+        public int quantitySlots = 8;
         public bool retrieveOnly = false;
         float rotAngleY;
 
@@ -40,9 +40,9 @@ namespace arrowbarrels
 
                 foreach (var slot in inventory)
                 {
-                    if (!slot.Empty && slot.Itemstack.Collectible is ItemSpear)
+                    if (!slot.Empty && slot.Itemstack.Collectible.Code.Path.Contains("stick"))
                     {
-                        return "stage";
+                        return "filled";
                     }
                 }
 
@@ -52,7 +52,7 @@ namespace arrowbarrels
 
         public override void Initialize(ICoreAPI api)
         {
-            ownBlock = (BlockSpearBarrel)Block;
+            ownBlock = (BlockStickBarrel)Block;
 
             bool isNewlyplaced = inventory == null;
             if (isNewlyplaced)
@@ -157,9 +157,9 @@ namespace arrowbarrels
 
             if (put && !hotbarslot.Empty)
             {
-                if (!IsSpear(hotbarslot.Itemstack))
+                if (!IsStick(hotbarslot.Itemstack))
                 {
-                    (Api as ICoreClientAPI)?.TriggerIngameError(this, "onlyspears", Lang.Get("Only spears can be stored in this barrel."));
+                    (Api as ICoreClientAPI)?.TriggerIngameError(this, "onlyarrows", Lang.Get("Only arrows can be stored in this barrel."));
                     return true;
                 }
 
@@ -175,7 +175,7 @@ namespace arrowbarrels
                             loadOrCreateMesh();
                         }
                         MarkDirty(true);
-                        Api.World.Logger.Audit("{0} Put {1}x{2} into Barrel at {3}.",
+                        Api.World.Logger.Audit("{0} Put {1}x{2} into Crate at {3}.",
                             byPlayer.PlayerName,
                             quantity,
                             inventory[0].Itemstack?.Collectible.Code,
@@ -185,25 +185,28 @@ namespace arrowbarrels
                 }
                 else
                 {
-                    List<ItemSlot> skipSlots = new List<ItemSlot>();
-                    while (hotbarslot.StackSize > 0 && skipSlots.Count < inventory.Count)
+                    if (hotbarslot.Itemstack.Equals(Api.World, ownSlot.Itemstack, GlobalConstants.IgnoredStackAttributes))
                     {
-                        var wslot = inventory.GetBestSuitedSlot(hotbarslot, null, skipSlots);
-                        if (wslot.slot == null) break;
-
-                        if (hotbarslot.TryPutInto(Api.World, wslot.slot, quantity) > 0)
+                        List<ItemSlot> skipSlots = new List<ItemSlot>();
+                        while (hotbarslot.StackSize > 0 && skipSlots.Count < inventory.Count)
                         {
-                            didMoveItems(wslot.slot.Itemstack, byPlayer);
-                            Api.World.Logger.Audit("{0} Put {1}x{2} into Barrel at {3}.",
-                                byPlayer.PlayerName,
-                                quantity,
-                                wslot.slot.Itemstack?.Collectible.Code,
-                                Pos
-                            );
-                            if (!bulk) break;
-                        }
+                            var wslot = inventory.GetBestSuitedSlot(hotbarslot, null, skipSlots);
+                            if (wslot.slot == null) break;
 
-                        skipSlots.Add(wslot.slot);
+                            if (hotbarslot.TryPutInto(Api.World, wslot.slot, quantity) > 0)
+                            {
+                                didMoveItems(wslot.slot.Itemstack, byPlayer);
+                                Api.World.Logger.Audit("{0} Put {1}x{2} into Barrel at {3}.",
+                                    byPlayer.PlayerName,
+                                    quantity,
+                                    wslot.slot.Itemstack?.Collectible.Code,
+                                    Pos
+                                );
+                                if (!bulk) break;
+                            }
+
+                            skipSlots.Add(wslot.slot);
+                        }
                     }
                 }
 
@@ -286,7 +289,7 @@ namespace arrowbarrels
 
         public override void FromTreeAttributes(ITreeAttribute tree, IWorldAccessor worldForResolving)
         {
-            var block = worldForResolving.GetBlock(new AssetLocation(tree.GetString("blockCode"))) as BlockSpearBarrel;
+            var block = worldForResolving.GetBlock(new AssetLocation(tree.GetString("blockCode"))) as BlockStickBarrel;
 
             type = tree.GetString("type", block?.Props.DefaultType);
             MeshAngle = tree.GetFloat("meshAngle", MeshAngle);
@@ -354,7 +357,7 @@ namespace arrowbarrels
 
         private ItemSlot GetAutoPushIntoSlot(BlockFacing atBlockFace, ItemSlot fromSlot)
         {
-            if (!IsSpear(fromSlot?.Itemstack)) return null;
+            if (!IsStick(fromSlot?.Itemstack)) return null;
 
             var slotNonEmpty = inventory.FirstNonEmptySlot;
             if (slotNonEmpty == null) return inventory[0];
@@ -386,8 +389,8 @@ namespace arrowbarrels
 
         private void loadOrCreateMesh()
         {
-            Block ??= Api.World.BlockAccessor.GetBlock(Pos) as BlockSpearBarrel;
-            BlockSpearBarrel block = Block as BlockSpearBarrel;
+            Block ??= Api.World.BlockAccessor.GetBlock(Pos) as BlockStickBarrel;
+            BlockStickBarrel block = Block as BlockStickBarrel;
             if (block == null) return;
 
             string cacheKey = "barrelMeshes" + block.FirstCodePart();
@@ -429,7 +432,7 @@ namespace arrowbarrels
 
             if (totalCount <= 0) return "empty";
 
-            int perSlotMax = inventory.FirstNonEmptySlot?.Itemstack?.Collectible?.MaxStackSize ?? 1;
+            int perSlotMax = inventory.FirstNonEmptySlot?.Itemstack?.Collectible?.MaxStackSize ?? 64;
 
             // Capacity = slots * per-slot max
             int capacity = quantitySlots * perSlotMax;
@@ -437,19 +440,15 @@ namespace arrowbarrels
 
             float ratio = (float)totalCount / capacity;
 
-            // Divide into 12 slices
-            if (ratio <= 0.084f) return "stage1";
-            if (ratio <= 0.167f) return "stage2";
-            if (ratio <= 0.25f) return "stage3";
-            if (ratio <= 0.334f) return "stage4";
-            if (ratio <= 0.417f) return "stage5";
-            if (ratio <= 0.501f) return "stage6";
-            if (ratio <= 0.584f) return "stage7";
-            if (ratio <= 0.668f) return "stage8";
-            if (ratio <= 0.751f) return "stage9";
-            if (ratio <= 0.834f) return "stage10";
-            if (ratio <= 0.917f) return "stage11";
-            return "stage12";
+            // Divide into 8 slices (each = 12.5% capacity)
+            if (ratio <= 0.125f) return "stage1";
+            if (ratio <= 0.250f) return "stage2";
+            if (ratio <= 0.375f) return "stage3";
+            if (ratio <= 0.500f) return "stage4";
+            if (ratio <= 0.625f) return "stage5";
+            if (ratio <= 0.750f) return "stage6";
+            if (ratio <= 0.875f) return "stage7";
+            return "stage8";
         }
 
         public override bool OnTesselation(ITerrainMeshPool mesher, ITesselatorAPI tesselator)
@@ -515,15 +514,15 @@ namespace arrowbarrels
             tree.SetFloat("meshAngle", MeshAngle);
         }
 
-        private static bool IsSpear(ItemStack stack)
+        private static bool IsStick(ItemStack stack)
         {
             if (stack == null) return false;
 
             var path = stack.Collectible?.Code?.Path ?? "";
-            if (path.StartsWith("spear-")) return true;
+            if (path.StartsWith("stick")) return true;
 
-            // Optional: allow a JSON flag to mark custom spears
-            if (stack.Collectible?.Attributes?["isSpear"].AsBool(false) == true) return true;
+            // Optional: allow a JSON flag to mark custom arrows
+            if (stack.Collectible?.Attributes?["isStick"].AsBool(false) == true) return true;
 
             return false;
         }

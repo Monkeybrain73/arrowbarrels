@@ -29,11 +29,31 @@
 	"arrowbarrels:block-wood-walnut-spearbarrel": "Walnut spear barrel",
 	"arrowbarrels:block-wood-purpleheart-spearbarrel": "Purpleheart spear barrel",
 
+	"arrowbarrels:block-wood-*-stickbarrel": "Stick barrel",
+	"arrowbarrels:block-wood-aged-stickbarrel": "Aged stick barrel",
+	"arrowbarrels:block-wood-birch-stickbarrel": "Birch stick barrel",
+	"arrowbarrels:block-wood-oak-stickbarrel": "Oak stick barrel",
+	"arrowbarrels:block-wood-maple-stickbarrel": "Maple stick barrel",
+	"arrowbarrels:block-wood-pine-stickbarrel": "Pine stick barrel",
+	"arrowbarrels:block-wood-acacia-stickbarrel": "Acacia stick barrel",
+	"arrowbarrels:block-wood-kapok-stickbarrel": "Kapok stick barrel",
+	"arrowbarrels:block-wood-baldcypress-stickbarrel": "Baldcypress stick barrel",
+	"arrowbarrels:block-wood-larch-stickbarrel": "Larch stick barrel",
+	"arrowbarrels:block-wood-redwood-stickbarrel": "Redwood stick barrel",
+	"arrowbarrels:block-wood-ebony-stickbarrel": "Ebony stick barrel",
+	"arrowbarrels:block-wood-walnut-stickbarrel": "Walnut stick barrel",
+	"arrowbarrels:block-wood-purpleheart-stickbarrel": "Purpleheart stick barrel",
+
 	"game:blockhelp-spear-add": "Add one spear",
 	"game:blockhelp-spear-remove": "Remove one spear",
 
 	"game:blockhelp-arrow-add": "Add one arrow",
 	"game:blockhelp-arrow-remove": "Remove one arrow",
-	"game:blockhelp-arrow-addall": "Add stack or arrows",
-	"game:blockhelp-arrow-removeall": "Remove stack of arrows"
+	"game:blockhelp-arrow-addall": "Add stack of arrows",
+	"game:blockhelp-arrow-removeall": "Remove stack of arrows",
+
+	"game:blockhelp-stick-add": "Add one stick",
+	"game:blockhelp-stick-remove": "Remove one stick",
+	"game:blockhelp-stick-addall": "Add stack of sticks",
+	"game:blockhelp-stick-removeall": "Remove stack of sticks"
 }

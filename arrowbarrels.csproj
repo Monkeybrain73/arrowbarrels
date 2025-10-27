@@ -2,8 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <ApplicationIcon>favicon.ico</ApplicationIcon>
+	<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+	<OutputPath>bin\$(Configuration)\Mods\mod</OutputPath>
+	<ApplicationIcon>favicon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -120,6 +121,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="assets\arrowbarrels\shapes\block\wood\barrel\spears\normal-stage11.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="assets\arrowbarrels\shapes\block\wood\barrel\spears\normal-stage12.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="assets\arrowbarrels\shapes\block\wood\barrel\spears\normal-stage2.json">

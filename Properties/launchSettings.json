@@ -3,7 +3,7 @@
     "Client": {
       "commandName": "Executable",
       "executablePath": "$(VINTAGE_STORY)/Vintagestory.exe",
-      "commandLineArgs": "--tracelog --addModPath \"$(ProjectDir)/bin/$(Configuration)/Mods\"",
+      "commandLineArgs": "--tracelog --addModPath \"$(ProjectDir)/bin/$(Configuration)/Mods\"\r\n--dataPath \"$(VINTAGE_STORY)/Data\"",
       "workingDirectory": "$(VINTAGE_STORY)"
     },
     "Server": {
