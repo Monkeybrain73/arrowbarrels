@@ -1,12 +1,8 @@
-﻿using Vintagestory.API.Client;
-using Vintagestory.API.Common;
-using Vintagestory.API.Config;
-using Vintagestory.API.Server;
-
+﻿
 [assembly: ModInfo("arrowbarrels",
                     Authors = new string[] { "xXx_Ape_xXx" },
                     Description = "Barrels for storing arrows",
-                    Version = "1.0.0")]
+                    Version = "1.3.0")]
 
 namespace arrowbarrels
 {
@@ -41,15 +37,21 @@ namespace arrowbarrels
         private void RegisterBlocks(ICoreAPI api)
         {
             api.RegisterBlockClass("BlockArrowBarrel", typeof(BlockArrowBarrel));
+            api.RegisterBlockClass("BlockSpearBarrel", typeof(BlockSpearBarrel));
+            api.RegisterBlockClass("BlockStickBarrel", typeof(BlockStickBarrel));
         }
 
         private void RegisterEntityclasses(ICoreAPI api)
         {
             api.RegisterBlockEntityClass("BEArrowBarrel", typeof(BEArrowBarrel));
+            api.RegisterBlockEntityClass("BESpearBarrel", typeof(BESpearBarrel));
+            api.RegisterBlockEntityClass("BEStickBarrel", typeof(BEStickBarrel));
         }
         private void RegisterColBehaviours(ICoreAPI api)
         {
             api.RegisterCollectibleBehaviorClass("CBArrowBarrel", typeof(CollectibleBehaviorArrowBarrel));
+            api.RegisterCollectibleBehaviorClass("CBSpearBarrel", typeof(CollectibleBehaviorSpearBarrel));
+            api.RegisterCollectibleBehaviorClass("CBStickBarrel", typeof(CollectibleBehaviorStickBarrel));
         }
 
 

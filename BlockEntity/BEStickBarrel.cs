@@ -2,10 +2,10 @@
 
 namespace arrowbarrels
 {
-    public class BEArrowBarrel : BlockEntityContainer, IRotatable
+    public class BEStickBarrel : BlockEntityContainer, IRotatable
     {
         InventoryGeneric inventory;
-        BlockArrowBarrel ownBlock;
+        BlockStickBarrel ownBlock;
 
         public string type = "wood-aged";
         public string preferredFillState = "empty";
@@ -40,7 +40,7 @@ namespace arrowbarrels
 
                 foreach (var slot in inventory)
                 {
-                    if (!slot.Empty && slot.Itemstack.Collectible is ItemArrow)
+                    if (!slot.Empty && slot.Itemstack.Collectible.Code.Path.Contains("stick"))
                     {
                         return "filled";
                     }
@@ -52,7 +52,7 @@ namespace arrowbarrels
 
         public override void Initialize(ICoreAPI api)
         {
-            ownBlock = (BlockArrowBarrel)Block;
+            ownBlock = (BlockStickBarrel)Block;
 
             bool isNewlyplaced = inventory == null;
             if (isNewlyplaced)
@@ -157,9 +157,9 @@ namespace arrowbarrels
 
             if (put && !hotbarslot.Empty)
             {
-                if (!IsArrow(hotbarslot.Itemstack))
+                if (!IsStick(hotbarslot.Itemstack))
                 {
-                    (Api as ICoreClientAPI)?.TriggerIngameError(this, "onlyarrows", Lang.Get("Only arrows can be stored in this barrel."));
+                    (Api as ICoreClientAPI)?.TriggerIngameError(this, "onlysticks", Lang.Get("Only sticks can be stored in this barrel."));
                     return true;
                 }
 
@@ -175,7 +175,7 @@ namespace arrowbarrels
                             loadOrCreateMesh();
                         }
                         MarkDirty(true);
-                        Api.World.Logger.Audit("{0} Put {1}x{2} into Crate at {3}.",
+                        Api.World.Logger.Audit("{0} Put {1}x{2} into Barrel at {3}.",
                             byPlayer.PlayerName,
                             quantity,
                             inventory[0].Itemstack?.Collectible.Code,
@@ -289,7 +289,7 @@ namespace arrowbarrels
 
         public override void FromTreeAttributes(ITreeAttribute tree, IWorldAccessor worldForResolving)
         {
-            var block = worldForResolving.GetBlock(new AssetLocation(tree.GetString("blockCode"))) as BlockArrowBarrel;
+            var block = worldForResolving.GetBlock(new AssetLocation(tree.GetString("blockCode"))) as BlockStickBarrel;
 
             type = tree.GetString("type", block?.Props.DefaultType);
             MeshAngle = tree.GetFloat("meshAngle", MeshAngle);
@@ -357,7 +357,7 @@ namespace arrowbarrels
 
         private ItemSlot GetAutoPushIntoSlot(BlockFacing atBlockFace, ItemSlot fromSlot)
         {
-            if (!IsArrow(fromSlot?.Itemstack)) return null;
+            if (!IsStick(fromSlot?.Itemstack)) return null;
 
             var slotNonEmpty = inventory.FirstNonEmptySlot;
             if (slotNonEmpty == null) return inventory[0];
@@ -389,8 +389,8 @@ namespace arrowbarrels
 
         private void loadOrCreateMesh()
         {
-            Block ??= Api.World.BlockAccessor.GetBlock(Pos) as BlockArrowBarrel;
-            BlockArrowBarrel block = Block as BlockArrowBarrel;
+            Block ??= Api.World.BlockAccessor.GetBlock(Pos) as BlockStickBarrel;
+            BlockStickBarrel block = Block as BlockStickBarrel;
             if (block == null) return;
 
             string cacheKey = "barrelMeshes" + block.FirstCodePart();
@@ -514,15 +514,15 @@ namespace arrowbarrels
             tree.SetFloat("meshAngle", MeshAngle);
         }
 
-        private static bool IsArrow(ItemStack stack)
+        private static bool IsStick(ItemStack stack)
         {
             if (stack == null) return false;
 
             var path = stack.Collectible?.Code?.Path ?? "";
-            if (path.StartsWith("arrow-")) return true;
+            if (path.StartsWith("stick")) return true;
 
             // Optional: allow a JSON flag to mark custom arrows
-            if (stack.Collectible?.Attributes?["isArrow"].AsBool(false) == true) return true;
+            if (stack.Collectible?.Attributes?["isStick"].AsBool(false) == true) return true;
 
             return false;
         }

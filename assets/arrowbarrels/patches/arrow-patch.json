@@ -1,0 +1,21 @@
+[
+	{
+		"_comment": "Vanilla Arrows - Just in case they change in the future",
+		"enabled": false,
+		"side": "server",
+		"file": "game:itemtypes/tool/arrow.json",
+		"op": "addmerge",
+		"path": "/attributes/isArrow",
+		"value": true
+	},
+	{
+		"_comment": "Maltiez Crossbows - Bolts",
+		"enabled": true,
+		"side": "server",
+		"file": "maltiezcrossbows:itemtypes/bolt.json",
+		"op": "addmerge",
+		"path": "/attributes/isArrow",
+		"value": true,
+		"dependsOn": [{ "modid": "maltiezcrossbows" }]
+	}
+]
