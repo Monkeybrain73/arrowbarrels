@@ -3,6 +3,8 @@
 The Arrow Barrels mod adds specialized storage barrels to Vintage Story that can only hold arrows.  
 Barrels visually change their shape depending on how full they are, providing an at-a-glance indication of stored arrows.
 
+The mod have been extended to include barrels for storing other items:  Spears and Sticks
+
 ## Features
 - Dedicated storage for arrows only (any arrow type).
 - Barrels update their appearance dynamically as arrows are added or removed.
@@ -21,7 +23,7 @@ Barrels visually change their shape depending on how full they are, providing an
 - Visual states update automatically based on the number of arrows stored.
 
 ## Compatibility
-- Works with Vintage Story 1.20.0 - 1.21.1
+- Works with Vintage Story 1.20.0 - 1.21.5
 - Should be compatible with other mods unless they replace barrel-related block/entity classes.
 
 ## License
