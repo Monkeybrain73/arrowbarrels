@@ -159,7 +159,7 @@ namespace arrowbarrels
             {
                 if (!IsStick(hotbarslot.Itemstack))
                 {
-                    (Api as ICoreClientAPI)?.TriggerIngameError(this, "onlyarrows", Lang.Get("Only arrows can be stored in this barrel."));
+                    (Api as ICoreClientAPI)?.TriggerIngameError(this, "onlysticks", Lang.Get("Only sticks can be stored in this barrel."));
                     return true;
                 }
 
@@ -175,7 +175,7 @@ namespace arrowbarrels
                             loadOrCreateMesh();
                         }
                         MarkDirty(true);
-                        Api.World.Logger.Audit("{0} Put {1}x{2} into Crate at {3}.",
+                        Api.World.Logger.Audit("{0} Put {1}x{2} into Barrel at {3}.",
                             byPlayer.PlayerName,
                             quantity,
                             inventory[0].Itemstack?.Collectible.Code,

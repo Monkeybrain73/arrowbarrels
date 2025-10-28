@@ -431,12 +431,11 @@ namespace arrowbarrels
 
         protected MeshData genContentMesh(ICoreClientAPI capi, ItemStack contentStack, Vec3f rotation = null)
         {
-
             var contentSource = BlockBarrel.getContentTexture(capi, contentStack, out float fillHeight);
 
             if (contentSource != null)
             {
-                Shape shape = Vintagestory.API.Common.Shape.TryGet(api, "shapes/block/wood/barrel/sticks/contents.json");
+                Shape shape = Vintagestory.API.Common.Shape.TryGet(api, "arrowbarrels:shapes/block/wood/barrel/sticks/contents.json");
                 capi.Tesselator.TesselateShape("barrelcontents", shape, out MeshData contentMesh, contentSource, rotation);
                 contentMesh.Translate(0, fillHeight * 1.1f, 0);
                 return contentMesh;
