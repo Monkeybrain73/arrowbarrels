@@ -66,6 +66,9 @@
     <None Update="assets\arrowbarrels\blocktypes\wood\spearbarrel.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="assets\arrowbarrels\blocktypes\wood\stickbarrel.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="assets\arrowbarrels\lang\en.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -148,6 +151,36 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="assets\arrowbarrels\shapes\block\wood\barrel\spears\normal-stage9.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="assets\arrowbarrels\shapes\block\wood\barrel\sticks\contents.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="assets\arrowbarrels\shapes\block\wood\barrel\sticks\normal-empty.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="assets\arrowbarrels\shapes\block\wood\barrel\sticks\normal-stage1.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="assets\arrowbarrels\shapes\block\wood\barrel\sticks\normal-stage2.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="assets\arrowbarrels\shapes\block\wood\barrel\sticks\normal-stage3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="assets\arrowbarrels\shapes\block\wood\barrel\sticks\normal-stage4.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="assets\arrowbarrels\shapes\block\wood\barrel\sticks\normal-stage5.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="assets\arrowbarrels\shapes\block\wood\barrel\sticks\normal-stage6.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="assets\arrowbarrels\shapes\block\wood\barrel\sticks\normal-stage7.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="assets\arrowbarrels\shapes\block\wood\barrel\sticks\normal-stage8.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="modicon.png">
