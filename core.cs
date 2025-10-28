@@ -38,17 +38,20 @@ namespace arrowbarrels
         {
             api.RegisterBlockClass("BlockArrowBarrel", typeof(BlockArrowBarrel));
             api.RegisterBlockClass("BlockSpearBarrel", typeof(BlockSpearBarrel));
+            api.RegisterBlockClass("BlockStickBarrel", typeof(BlockStickBarrel));
         }
 
         private void RegisterEntityclasses(ICoreAPI api)
         {
             api.RegisterBlockEntityClass("BEArrowBarrel", typeof(BEArrowBarrel));
             api.RegisterBlockEntityClass("BESpearBarrel", typeof(BESpearBarrel));
+            api.RegisterBlockEntityClass("BEStickBarrel", typeof(BEStickBarrel));
         }
         private void RegisterColBehaviours(ICoreAPI api)
         {
             api.RegisterCollectibleBehaviorClass("CBArrowBarrel", typeof(CollectibleBehaviorArrowBarrel));
             api.RegisterCollectibleBehaviorClass("CBSpearBarrel", typeof(CollectibleBehaviorSpearBarrel));
+            api.RegisterCollectibleBehaviorClass("CBStickBarrel", typeof(CollectibleBehaviorStickBarrel));
         }
 
 
