@@ -14,7 +14,7 @@
 		"types": ["wood-aged", "wood-birch", "wood-oak", "wood-maple", "wood-pine", "wood-acacia", "wood-kapok", "wood-baldcypress", "wood-larch", "wood-redwood", "wood-ebony", "wood-walnut", "wood-purpleheart"],
 		"properties": {
 			"*": {
-				"quantitySlots": 12,
+				"quantitySlots": 16,
 				"rotatatableInterval": "22.5deg",
 				"storageFlags": 1,
 				"retrieveOnly": false,
@@ -75,6 +75,7 @@
 		"wood-aged-blackbronze4": { "base": "game:block/metal/sheet/blackbronze4" },
 		"wood-aged-material": { "base": "game:block/metal/ingot/copper" },
 		"wood-aged-material2": { "base": "game:item/tool/material/flint" },
+    "wood-aged-flint": { "base": "game:item/tool/material/flint" },
 		"wood-aged-handle": { "base": "game:item/tool/material/handle" },
     "wood-aged-string": { "base": "game:item/tool/material/string" },
 
@@ -83,6 +84,7 @@
 		"wood-birch-blackbronze4": { "base": "game:block/metal/sheet/blackbronze4" },
 		"wood-birch-material": { "base": "game:block/metal/ingot/copper" },
 		"wood-birch-material2": { "base": "game:item/tool/material/flint" },
+    "wood-birch-flint": { "base": "game:item/tool/material/flint" },
 		"wood-birch-handle": { "base": "game:item/tool/material/handle" },
     "wood-birch-string": { "base": "game:item/tool/material/string" },
 
@@ -91,6 +93,7 @@
 		"wood-oak-blackbronze4": { "base": "game:block/metal/sheet/blackbronze4" },
 		"wood-oak-material": { "base": "game:block/metal/ingot/copper" },
 		"wood-oak-material2": { "base": "game:item/tool/material/flint" },
+    "wood-oak-flint": { "base": "game:item/tool/material/flint" },
 		"wood-oak-handle": { "base": "game:item/tool/material/handle" },
 		"wood-oak-string": { "base": "game:item/tool/material/string" },
 
@@ -99,6 +102,7 @@
 		"wood-maple-blackbronze4": { "base": "game:block/metal/sheet/blackbronze4" },
 		"wood-maple-material": { "base": "game:block/metal/ingot/copper" },
 		"wood-maple-material2": { "base": "game:item/tool/material/flint" },
+    "wood-maple-flint": { "base": "game:item/tool/material/flint" },
 		"wood-maple-handle": { "base": "game:item/tool/material/handle" },
 		"wood-maple-string": { "base": "game:item/tool/material/string" },
 
@@ -107,6 +111,7 @@
 		"wood-pine-blackbronze4": { "base": "game:block/metal/sheet/blackbronze4" },
 		"wood-pine-material": { "base": "game:block/metal/ingot/copper" },
 		"wood-pine-material2": { "base": "game:item/tool/material/flint" },
+    "wood-pine-flint": { "base": "game:item/tool/material/flint" },
 		"wood-pine-handle": { "base": "game:item/tool/material/handle" },
 		"wood-pine-string": { "base": "game:item/tool/material/string" },
 
@@ -115,6 +120,7 @@
 		"wood-acacia-blackbronze4": { "base": "game:block/metal/sheet/blackbronze4" },
 		"wood-acacia-material": { "base": "game:block/metal/ingot/copper" },
 		"wood-acacia-material2": { "base": "game:item/tool/material/flint" },
+    "wood-acacia-flint": { "base": "game:item/tool/material/flint" },
 		"wood-acacia-handle": { "base": "game:item/tool/material/handle" },
 		"wood-acacia-string": { "base": "game:item/tool/material/string" },
 
@@ -123,6 +129,7 @@
 		"wood-kapok-blackbronze4": { "base": "game:block/metal/sheet/blackbronze4" },
 		"wood-kapok-material": { "base": "game:block/metal/ingot/copper" },
 		"wood-kapok-material2": { "base": "game:item/tool/material/flint" },
+    "wood-kapok-flint": { "base": "game:item/tool/material/flint" },
 		"wood-kapok-handle": { "base": "game:item/tool/material/handle" },
 		"wood-kapok-string": { "base": "game:item/tool/material/string" },
 
@@ -131,6 +138,7 @@
 		"wood-baldcypress-blackbronze4": { "base": "game:block/metal/sheet/blackbronze4" },
 		"wood-baldcypress-material": { "base": "game:block/metal/ingot/copper" },
 		"wood-baldcypress-material2": { "base": "game:item/tool/material/flint" },
+    "wood-baldcypress-flint": { "base": "game:item/tool/material/flint" },
 		"wood-baldcypress-handle": { "base": "game:item/tool/material/handle" },
 		"wood-baldcypress-string": { "base": "game:item/tool/material/string" },
 
@@ -139,6 +147,7 @@
 		"wood-larch-blackbronze4": { "base": "game:block/metal/sheet/blackbronze4" },
 		"wood-larch-material": { "base": "game:block/metal/ingot/copper" },
 		"wood-larch-material2": { "base": "game:item/tool/material/flint" },
+    "wood-larch-flint": { "base": "game:item/tool/material/flint" },
 		"wood-larch-handle": { "base": "game:item/tool/material/handle" },
 		"wood-larch-string": { "base": "game:item/tool/material/string" },
 
@@ -147,6 +156,7 @@
 		"wood-redwood-blackbronze4": { "base": "game:block/metal/sheet/blackbronze4" },
 		"wood-redwood-material": { "base": "game:block/metal/ingot/copper" },
 		"wood-redwood-material2": { "base": "game:item/tool/material/flint" },
+		"wood-redwood-flint": { "base": "game:item/tool/material/flint" },
 		"wood-redwood-handle": { "base": "game:item/tool/material/handle" },
 		"wood-redwood-string": { "base": "game:item/tool/material/string" },
 
@@ -155,6 +165,7 @@
 		"wood-ebony-blackbronze4": { "base": "game:block/metal/sheet/blackbronze4" },
 		"wood-ebony-material": { "base": "game:block/metal/ingot/copper" },
 		"wood-ebony-material2": { "base": "game:item/tool/material/flint" },
+		"wood-ebony-flint": { "base": "game:item/tool/material/flint" },
 		"wood-ebony-handle": { "base": "game:item/tool/material/handle" },
 		"wood-ebony-string": { "base": "game:item/tool/material/string" },
 
@@ -163,6 +174,7 @@
 		"wood-walnut-blackbronze4": { "base": "game:block/metal/sheet/blackbronze4" },
 		"wood-walnut-material": { "base": "game:block/metal/ingot/copper" },
 		"wood-walnut-material2": { "base": "game:item/tool/material/flint" },
+		"wood-walnut-flint": { "base": "game:item/tool/material/flint" },
 		"wood-walnut-handle": { "base": "game:item/tool/material/handle" },
 		"wood-walnut-string": { "base": "game:item/tool/material/string" },
 
@@ -171,6 +183,7 @@
 		"wood-purpleheart-blackbronze4": { "base": "game:block/metal/sheet/blackbronze4" },
 		"wood-purpleheart-material": { "base": "game:block/metal/ingot/copper" },
 		"wood-purpleheart-material2": { "base": "game:item/tool/material/flint" },
+		"wood-purpleheart-flint": { "base": "game:item/tool/material/flint" },
 		"wood-purpleheart-handle": { "base": "game:item/tool/material/handle" },
 		"wood-purpleheart-string": { "base": "game:item/tool/material/string" }
 	},
