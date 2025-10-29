@@ -1,0 +1,56 @@
+{
+	"version": 1,
+	"file": "ArrowBarrels.json",
+	"patches": {
+		"integer": {
+			"arrowbarrels:blocktypes/wood/arrowbarrel.json": {
+				"attributes/properties/*/quantitySlots": "ARROWBARRELS_SLOTS"
+			},
+			"arrowbarrels:blocktypes/wood/spearbarrel.json": {
+				"attributes/properties/*/quantitySlots": "SPEARBARRELS_SLOTS"
+			},
+      "arrowbarrels:blocktypes/wood/stickbarrel.json": {
+        "attributes/properties/*/quantitySlots": "STICKBARRELS_SLOTS"
+      }
+		}
+	},
+	"settings": {
+		"integer": {
+			"ARROWBARRELS_SLOTS": {
+				"name": "arrowbarrel-slots",
+				"ingui": "arrowbarrels:setting-slots",
+				"weight": 2.0,
+				"default": 2,
+				"range": {
+					"min": 1,
+					"max": 16
+				}
+			},
+			"SPEARBARRELS_SLOTS": {
+				"name": "spearbarrel-slots",
+				"ingui": "arrowbarrels:setting-slots",
+				"weight": 6.0,
+				"default": 12,
+				"range": {
+					"min": 1,
+					"max": 32
+				}
+			},
+			"STICKBARRELS_SLOTS": {
+				"name": "stickbarrel-slots",
+				"ingui": "arrowbarrels:setting-slots",
+				"weight": 10.0,
+				"default": 8,
+				"range": {
+					"min": 1,
+					"max": 16
+				}
+			}
+		}
+	},
+	"formatting": [
+		{ "type": "separator", "title": "arrowbarrels:arrowbarrel-separator", "weight": 1.0 },
+		{ "type": "separator", "title": "arrowbarrels:spearbarrel-separator", "weight": 5.0 },
+		{ "type": "separator", "title": "arrowbarrels:stickbarrel-separator", "weight": 9.0 }
+	]
+}
