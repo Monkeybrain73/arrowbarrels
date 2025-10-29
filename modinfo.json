@@ -8,7 +8,7 @@
   "requiredOnClient": true,
   "requiredOnServer": true,
   "side": "universal",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "dependencies": { 
 	"game": "1.21.0"
   }
