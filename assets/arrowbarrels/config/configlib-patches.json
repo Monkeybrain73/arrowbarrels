@@ -30,7 +30,7 @@
 				"name": "spearbarrel-slots",
 				"ingui": "arrowbarrels:setting-slots",
 				"weight": 6.0,
-				"default": 12,
+				"default": 16,
 				"range": {
 					"min": 1,
 					"max": 32

@@ -2,7 +2,7 @@
 [assembly: ModInfo("arrowbarrels",
                     Authors = new string[] { "xXx_Ape_xXx" },
                     Description = "Barrels for storing arrows",
-                    Version = "1.3.0")]
+                    Version = "1.4.0")]
 
 namespace arrowbarrels
 {
