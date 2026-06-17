@@ -129,8 +129,8 @@ namespace arrowbarrels
         protected void didMoveItems(ItemStack stack, IPlayer byPlayer)
         {
             (Api as ICoreClientAPI)?.World.Player.TriggerFpAnimation(EnumHandInteract.HeldItemInteract);
-            AssetLocation sound = stack?.Block?.Sounds?.Place;
-            Api.World.PlaySoundAt(sound != null ? sound : new AssetLocation("game:sounds/player/build"), byPlayer.Entity, byPlayer, true, 16);
+            SoundAttributes? sound = stack?.Block?.Sounds?.Place;
+            Api.World.PlaySoundAt(sound ?? GlobalConstants.DefaultBuildSound, byPlayer.Entity, byPlayer);
         }
     }
 
@@ -241,7 +241,7 @@ namespace arrowbarrels
         }
 
 
-        public override bool DoParticalSelection(IWorldAccessor world, BlockPos pos)
+        public override bool DoPartialSelection(IWorldAccessor world, BlockPos pos)
         {
             return true;
         }

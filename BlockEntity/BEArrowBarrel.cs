@@ -218,14 +218,25 @@ namespace arrowbarrels
             return true;
         }
 
+        /*
         protected void didMoveItems(ItemStack stack, IPlayer byPlayer)
         {
             if (Api.Side == EnumAppSide.Client) loadOrCreateMesh();
 
             (Api as ICoreClientAPI)?.World.Player.TriggerFpAnimation(EnumHandInteract.HeldItemInteract);
+
             AssetLocation sound = stack?.Block?.Sounds?.Place;
             Api.World.PlaySoundAt(sound != null ? sound : new AssetLocation("game:sounds/player/build"), byPlayer.Entity, byPlayer, true, 16);
         }
+        */
+
+        protected void didMoveItems(ItemStack stack, IPlayer byPlayer)
+        {
+            (Api as ICoreClientAPI)?.World.Player.TriggerFpAnimation(EnumHandInteract.HeldItemInteract);
+            SoundAttributes? sound = stack?.Block?.Sounds?.Place;
+            Api.World.PlaySoundAt(sound ?? GlobalConstants.DefaultBuildSound, byPlayer.Entity, byPlayer);
+        }
+
 
         protected virtual void InitInventory(Block block, ICoreAPI api)
         {
