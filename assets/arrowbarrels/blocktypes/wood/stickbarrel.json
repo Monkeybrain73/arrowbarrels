@@ -14,7 +14,7 @@
 		"types": ["wood-aged", "wood-birch", "wood-oak", "wood-maple", "wood-pine", "wood-acacia", "wood-kapok", "wood-baldcypress", "wood-larch", "wood-redwood", "wood-ebony", "wood-walnut", "wood-purpleheart"],
 		"properties": {
 			"*": {
-				"quantitySlots": 8,
+				"quantitySlots": 4,
 				"rotatatableInterval": "22.5deg",
 				"storageFlags": 1,
 				"retrieveOnly": false,

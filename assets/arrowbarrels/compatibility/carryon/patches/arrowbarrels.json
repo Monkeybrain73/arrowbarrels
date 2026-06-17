@@ -1,0 +1,71 @@
+[
+  {
+    "file": "arrowbarrels:blocktypes/wood/arrowbarrel",
+    "side": "Server",
+    "op": "add",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Carryable",
+      "properties": {
+        "translation": [
+          -0.0625,
+          0,
+          0
+        ],
+        "slots": {
+          "Hands": {}
+        }
+      }
+    },
+    "condition": {
+      "when": "carryon:BarrelEnabled",
+      "isValue": "true"
+    }
+  },
+  {
+    "file": "arrowbarrels:blocktypes/wood/spearbarrel",
+    "side": "Server",
+    "op": "add",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Carryable",
+      "properties": {
+        "translation": [
+          -0.0625,
+          0,
+          0
+        ],
+        "slots": {
+          "Hands": {}
+        }
+      }
+    },
+    "condition": {
+      "when": "carryon:BarrelEnabled",
+      "isValue": "true"
+    }
+  },
+  {
+    "file": "arrowbarrels:blocktypes/wood/stickbarrel",
+    "side": "Server",
+    "op": "add",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Carryable",
+      "properties": {
+        "translation": [
+          -0.0625,
+          0,
+          0
+        ],
+        "slots": {
+          "Hands": {}
+        }
+      }
+    },
+    "condition": {
+      "when": "carryon:BarrelEnabled",
+      "isValue": "true"
+    }
+  }
+]
